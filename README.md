@@ -1,2 +1,2 @@
-# WorkMark-Backend
-Servidor Backend para o aplicativo WorkMark
+# RepairIQ-Backend
+Servidor Backend para o aplicativo RepairIQ
