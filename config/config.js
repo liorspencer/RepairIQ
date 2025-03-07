@@ -2,6 +2,7 @@
 function definirConfiguracoes(app, pkg) {
     app.use(pkg.bodyParser.urlencoded({ extended: false }));
     app.use(pkg.bodyParser.json()); // Usar JSON na comunicação
+    app.use(pkg.cookieParser())
     //Adicionar a configuração do CORS
     app.use((req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*"); //Permitir qualquer host
