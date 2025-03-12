@@ -1,2 +1,2 @@
-# RepairIQ-Backend
-Servidor Backend para o aplicativo RepairIQ
+# RepairIQ - Solução para Gerenciamento de Ordens de Serviço
+Repositório do sistema RepairIQ
