@@ -5,15 +5,90 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cor_principal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView_Usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Usuario"
+        android:textColor="@color/cor_texto"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+
+    <TextView
+        android:id="@+id/textViewSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textColor="@color/cor_texto"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="309dp"
+        android:layout_height="39dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="359dp" />
+
+    <TextView
+        android:id="@+id/textViewEsqueciSenha"
+        android:layout_width="141dp"
+        android:layout_height="25dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:text="Esqueci Minha Senha?"
+        android:textColor="@color/cor_texto"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="219dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:layout_width="309dp"
+        android:layout_height="39dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="284dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLogado"
+        android:layout_width="153dp"
+        android:layout_height="25dp"
+        android:text="Continuar logado"
+        android:textColor="@color/cor_texto"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F00E0E"
+        android:backgroundTint="#EF0B0B"
+        android:text="Button"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="494dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
