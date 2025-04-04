@@ -11,8 +11,8 @@ function definirConfiguracoes(app, pkg) {
         app.use(pkg.cors());
         next();
     });
-    app.set('views','./views');
-    app.set('public','./public')
+    app.set('views','./views/');
+    app.use(pkg.express.static('public'));
     app.set('view engine', 'ejs');
 }
 module.exports = { definirConfiguracoes };
