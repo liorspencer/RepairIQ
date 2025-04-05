@@ -1,7 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-xl p-12 bg-white rounded-xl shadow-lg">
+        <!-- Logo -->
+        <div class="text-center mb-6">
+            <img src="logo.png" alt="Logo" class="mx-auto h-16">
+        </div>
+
+        <!-- Formulário de Login -->
+        <form action="#" method="POST" class="space-y-6">
+            <!-- Input de Usuário -->
+            <div class="input-group">
+                <label for="username" class="text-sm font-semibold text-gray-700">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu usuário" required class="input input-bordered w-full text-gray-800 p-3" />
+            </div>
+
+            <!-- Input de Senha -->
+            <div class="input-group">
+                <label for="password" class="text-sm font-semibold text-gray-700">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required class="input input-bordered w-full text-base-00 p-3" />
+            </div>
+
+            <!-- Lembrar-se -->
+            <div class="flex items-center justify-start">
+                <label for="remember" class="text-sm text-gray-700">
+                    <input type="checkbox" id="remember" name="remember" class="checkbox checkbox-sm" />
+                    Continuar logado
+                </label>
+            </div>
+
+            <!-- Botão de Login -->
+            <div class="flex justify-center">
+                <button type="submit" class="btn btn-primary w-full py-3 text-primary-content text-lg font-semibold mt-4">Entrar</button>
+            </div>
+        </form>
+
+    </div>
+
 </body>
 </html>
