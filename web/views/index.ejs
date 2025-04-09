@@ -3,7 +3,8 @@
 
 <%- include('./partials/head') %>
 
-    <body>
+    <body class="bg-base-200 text-base-content">
+        <!--Navbar-->
         <div class="navbar bg-primary text-primary-content">
             <div class="navbar-start">
             </div>
@@ -19,7 +20,21 @@
                 </button>
             </div>
         </div>
+        
+            <!--Seção Apresentação-->
+            <section class="min-h-100 flex flex-col justify-center items-center text-center px-3">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-4 animate-pulse">RepairIQ</h1>
+                <p class="text-xl md:text-2xl max-w-2xl text-base-content/70 mb-8">
+                    Sua manutenção, mais rápida, precisa e inteligente
+                </p>
+                <a href="#"
+                    class="bg-primary hover:bg-accent text-white font-semibold py-3 px-6 rounded-2xl shadow-lg transition-all">
+                    Solicite uma Demonstração
+                </a>
+            </section>
+        <div>
+            TESTE
+        </div>
 
     </body>
-
 </html>
