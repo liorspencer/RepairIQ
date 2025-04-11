@@ -12,5 +12,11 @@ function definirRotas(app){
         })
         console.log("Login Acessado.")
     })
+    app.get("/dashboard", (req,res) => {
+        res.render("pages/dashboard", {
+            titulo: "Dashboard",
+        })
+        console.log("Dashboard Acessado.")
+    })
 }
 module.exports={definirRotas};
