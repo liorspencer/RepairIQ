@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RepairIQ</string>
+    <string name="titulo_abrir_ocorrencia">Abrir ocorrência</string>
+    <string name="ocorrencia_descreva">Descreva a ocorrência</string>
+    <string name="descricao_botao_fechar">Voltar a tela anterior</string>
 </resources>
