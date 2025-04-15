@@ -11,17 +11,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background=""
-        android:layout_marginBottom="6dp">
+        android:layout_marginBottom="6dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/b_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:background="@color/white"
             android:contentDescription="@string/descricao_botao_fechar"
-            android:background=""
             app:srcCompat="@drawable/close" />
 
         <TextView
@@ -30,19 +30,18 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:textSize="30sp"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
             android:text="@string/titulo_abrir_ocorrencia"
-            />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_titulo"
@@ -53,11 +52,58 @@
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:contentDescription="@string/ocorrencia_descreva"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:maxLength="3000"
+            android:maxLines="6"
+            android:minLines="6"
+            android:paddingVertical="2dp"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_titulo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_selecione_equipamento"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_edittext" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/rounded_inline_button"
+                android:padding="4dp"
+                app:srcCompat="@drawable/round_qr_code_scanner_24" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
