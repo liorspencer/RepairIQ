@@ -1,109 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AbrirOcorrenciaActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/b_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:background="@color/white"
-            android:contentDescription="@string/descricao_botao_fechar"
-            app:srcCompat="@drawable/close" />
-
-        <TextView
-            android:id="@+id/tv_acao"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:text="@string/titulo_abrir_ocorrencia"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="6dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ocorrencia_descreva"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/editTextTextMultiLine"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext"
-            android:contentDescription="@string/ocorrencia_descreva"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:maxLength="3000"
-            android:maxLines="6"
-            android:minLines="6"
-            android:paddingVertical="2dp"
-            android:singleLine="false"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="6dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_titulo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_selecione_equipamento"
-            android:textSize="16sp" />
-
+    android:fillViewport="true"
+    tools:context=".view.AbrirOcorrenciaActivity">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            <Spinner
-                android:id="@+id/spinner"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_edittext" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/rounded_inline_button"
-                android:padding="4dp"
-                app:srcCompat="@drawable/round_qr_code_scanner_24" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_marginBottom="6dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
 
-</LinearLayout>
+                <ImageButton
+                    android:id="@+id/ib_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@color/white"
+                    android:contentDescription="@string/descricao_botao_fechar"
+                    app:srcCompat="@drawable/close" />
+
+                <TextView
+                    android:id="@+id/tv_acao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/titulo_abrir_ocorrencia"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_descreva_ocorrencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/et_ocorrencia"
+                    android:text="@string/ocorrencia_descreva"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_ocorrencia"
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:maxLength="3000"
+                    android:maxLines="6"
+                    android:minLines="6"
+                    android:paddingVertical="2dp"
+                    android:singleLine="false"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_selecione_equipamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/sp_equipamento"
+                    android:text="@string/tv_selecione_equipamento"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/sp_equipamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_edittext" />
+
+                    <ImageButton
+                        android:id="@+id/ib_qr_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/rounded_inline_button"
+                        android:contentDescription="@string/ib_qr_code"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/qr_code" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_prioridade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/tv_prioridade"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_prioridade"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_alta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_alta" />
+
+                    <RadioButton
+                        android:id="@+id/rb_media"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_media" />
+
+                    <RadioButton
+                        android:id="@+id/rb_baixa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_baixa" />
+
+                </RadioGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/b_adicionar_fotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:padding="14dp"
+                    android:text="@string/mb_adicionar_fotos"
+                    app:icon="@drawable/add_photo" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rv_background"
+                    android:clipToPadding="true"
+                    android:elevation="4dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:padding="8dp"
+                    android:scrollbars="none"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_photo" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/b_abrir_ocorrencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="126dp"
+                    android:layout_marginEnd="126dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/black"
+                    android:padding="14dp"
+                    android:text="@string/mb_abrir_ocorrencia"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+</ScrollView>

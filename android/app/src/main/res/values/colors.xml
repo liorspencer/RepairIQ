@@ -8,6 +8,7 @@
     <color name="blue">#007BFF</color>
     <color name="textoBotaoCor">#FFFFFF</color>
     <color name="CorBotao" />
-    <color name="corBotao">#000000</color> <!-- Azul padrão -->
+    <color name="corBotao">#000000</color>
+    <color name="red">#FF0000</color> <!-- Azul padrão -->
 
 </resources>
