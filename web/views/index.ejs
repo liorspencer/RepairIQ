@@ -1,8 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head')  %>
-<body>
-    <h1 class="text-emerald-500"><%= mensagem %></h1>
-</body>
+<%- include('./partials/head') %>
+
+    <body class="bg-base-200 text-base-content">
+        <!--Navbar-->
+        <div class="navbar bg-primary text-primary-content">
+            <div class="navbar-start">
+            </div>
+            <div class="navbar-center">
+                <a class="btn btn-ghost text-xl">RepairIQ</a>
+            </div>
+            <div class="navbar-end">
+                <button class="btn btn-ghost">
+                    Contato
+                </button>
+                <button class="btn btn-secondary text-secondary-content">
+                    Login
+                </button>
+            </div>
+        </div>
+        
+            <!--Seção Apresentação-->
+            <section class="min-h-100 flex flex-col justify-center items-center text-center px-3">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-4 animate-pulse">RepairIQ</h1>
+                <p class="text-xl md:text-2xl max-w-2xl text-base-content/70 mb-8">
+                    Sua manutenção, mais rápida, precisa e inteligente
+                </p>
+                <a href="#"
+                    class="bg-primary hover:bg-accent text-white font-semibold py-3 px-6 rounded-2xl shadow-lg transition-all">
+                    Solicite uma Demonstração
+                </a>
+            </section>
+        <div>
+            TESTE
+        </div>
+
+    </body>
 </html>

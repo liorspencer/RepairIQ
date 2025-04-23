@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+  <title>Painel Principal</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuração do Tailwind para usar Poppins e cores personalizadas -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            vermelho: '#ff4d4d',
+            vermelhoHover: '#e63946',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-[#1e1e2f] to-[#2c2c3e] min-h-screen flex items-start justify-center py-10">
+
+  <div class="w-full max-w-[1200px] px-4 flex flex-col min-h-screen justify-between">
+
+    <!-- Logo -->
+    <div class="w-36 h-36 mx-auto mb-6">
+      <img src="/images/logo.webp" alt="Logo" class="w-full h-full object-contain" />
+    </div>
+
+    <!-- Grid de botões -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 py-10 text-center">
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Abrir Ocorrência</button>
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Abrir Pedido Almozarifado</button>
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Notificações Enviadas</button>
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Lista Ocorrência</button>
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Lista OS</button>
+      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Cadastro Funcionários</button>
+    </div>
+
+    <!-- Input e ações -->
+    <div class="text-center text-white mt-10">
+      <label for="osInput" class="block mb-3 text-base">Entre com o número OS</label>
+      <input id="osInput" type="text" placeholder="Digite o número da OS"
+      class="w-[300px] max-w-full px-4 py-3 bg-white text-black rounded-xl outline-none mb-6" />
+    
+
+      <div class="flex flex-wrap justify-center gap-6">
+        <button class="bg-black hover:bg-[#555] text-white px-8 py-4 text-base font-semibold rounded-[20px] transition-transform transform hover:scale-105">Consultar OS</button>
+        <button class="bg-black hover:bg-[#555] text-white px-8 py-4 text-base font-semibold rounded-[20px] transition-transform transform hover:scale-105">SAIR</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
