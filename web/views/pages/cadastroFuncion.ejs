@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="imagens/logo.webp" alt="Logo da empresa" />
+    </div>
+    
+    <h2 class="settings-title">Cadastro de Funcionário</h2>
+    
+    <div class="form-container">
+      <form action="#" method="POST">
+        <!-- Nome -->
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" required />
+        </div>
+
+        <!-- Cargo -->
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <input type="text" id="cargo" name="cargo" placeholder="Digite o cargo do funcionário" required />
+        </div>
+
+        <!-- E-mail -->
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite o e-mail" required />
+        </div>
+
+        <!-- Senha -->
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite a senha" required />
+        </div>
+
+        <!-- Confirmar Senha -->
+        <div class="form-group">
+          <label for="confirmar-senha">Confirmar Senha</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme a senha" required />
+        </div>
+
+        <!-- Botões -->
+        <div class="action-buttons">
+          <button type="submit" class="btn black-btn">Cadastrar</button>
+          <button type="reset" class="btn">Limpar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

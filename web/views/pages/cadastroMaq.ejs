@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="imagens/logo.webp" alt="Logo da empresa" />
+      </div>
+      <h2>Máquinas Cadastradas</h2>
+    </div>
+    
+    <div class="content">
+      <div class="equipment-list">
+        <!-- Aqui os equipamentos cadastrados serão listados dinamicamente -->
+      </div>
+    </div>
+
+    <div class="button-container">
+      <a href="index.html" class="btn">Voltar para o Cadastro</a>
+    </div>
+  </div>
+
+  <script>
+    // Função para gerar o QR Code
+    function gerarQRCode(codigo) {
+      const canvas = document.createElement('canvas');
+      QRCode.toCanvas(canvas, `http://exemplo.com/ocorrencia/${codigo}`, { width: 100 });
+      return canvas;
+    }
+
+    // Função para adicionar uma nova máquina à lista
+    function adicionarEquipamento(nome, codigo) {
+      const equipamentoDiv = document.createElement('div');
+      equipamentoDiv.classList.add('equipment');
+
+      equipamentoDiv.innerHTML = `
+        <h3>${nome}</h3>
+        <p>Código: ${codigo}</p>
+        <div class="qrcode"></div>
+        <a href="ocorrencia.html?codigo=${codigo}" class="btn">Abrir Ocorrência</a>
+      `;
+
+      // Gerando o QR Code para a máquina recém-cadastrada
+      const qrcodeElement = equipamentoDiv.querySelector('.qrcode');
+      const canvas = gerarQRCode(codigo);
+      qrcodeElement.appendChild(canvas);
+
+      // Adicionando o equipamento à lista
+      document.querySelector('.equipment-list').appendChild(equipamentoDiv);
+    }
+
+    // Simulando máquinas cadastradas - Exemplo
+    // Em uma aplicação real, você pode buscar os dados de uma base de dados ou localStorage
+    document.addEventListener("DOMContentLoaded", function() {
+      adicionarEquipamento('Máquina 1', '12345');
+      adicionarEquipamento('Máquina 2', '67890');
+      adicionarEquipamento('Máquina 3', '11223');
+    });
+  </script>
+</body>
+</html>

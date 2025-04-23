@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="imagens/logo.webp" alt="Logo da empresa" />
+      </div>
+      <h1>Lista de Ocorrências - Máquinas com Problema</h1>
+    </div>
+
+    <!-- Tabela de Ocorrências -->
+    <div class="ocorrencia-container">
+      <table class="ocorrencia-table">
+        <thead>
+          <tr>
+            <th>ID da Ocorrência</th>
+            <th>Máquina</th>
+            <th>Data do Alerta</th>
+            <th>Descrição do Problema</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exemplo de Ocorrências com Problema -->
+          <tr>
+            <td>#001</td>
+            <td>Máquina A</td>
+            <td>2025-04-10</td>
+            <td>Falha no sistema hidráulico, vazamento detectado</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Máquina B</td>
+            <td>2025-04-08</td>
+            <td>Problema na correia de transmissão, ruído excessivo</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+          <tr>
+            <td>#003</td>
+            <td>Máquina C</td>
+            <td>2025-04-11</td>
+            <td>Falha no motor, não está ligando</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+          <tr>
+            <td>#004</td>
+            <td>Máquina D</td>
+            <td>2025-04-12</td>
+            <td>Problema no painel de controle, tela apagada</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+          <tr>
+            <td>#005</td>
+            <td>Máquina E</td>
+            <td>2025-04-14</td>
+            <td>Falha no sistema de resfriamento, superaquecimento</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+          <tr>
+            <td>#006</td>
+            <td>Máquina F</td>
+            <td>2025-04-13</td>
+            <td>Ruído estranho na parte elétrica, possível curto-circuito</td>
+            <td class="status in-progress">Em análise</td>
+            <td><button class="btn update-status">Ver Detalhes</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

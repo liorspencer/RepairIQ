@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="imagens/logo.webp" alt="Logo da empresa" />
+      </div>
+      <h2>Gerenciamento de Equipamentos</h2>
+    </div>
+    
+    <div class="content">
+      <!-- Cadastro de Nova Máquina -->
+      <div class="cadastro">
+        <h3>Cadastro de Máquina</h3>
+        <form id="formCadastro" class="cadastro-form">
+          <label for="nome">Nome da Máquina:</label>
+          <input type="text" id="nome" placeholder="Digite o nome da máquina" required />
+          <label for="codigo">Código da Máquina:</label>
+          <input type="text" id="codigo" placeholder="Digite o código da máquina" required />
+          <button type="submit" class="btn">Cadastrar Máquina</button>
+        </form>
+      </div>
+
+      <!-- Botão para acessar Máquinas Cadastradas -->
+      <div class="button-container">
+        <a href="maquinas-cadastradas.html" class="btn">Máquinas Cadastradas</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Função para gerar o QR Code
+    function gerarQRCode(codigo) {
+      const canvas = document.createElement('canvas');
+      QRCode.toCanvas(canvas, `http://exemplo.com/ocorrencia/${codigo}`, { width: 100 });
+      return canvas;
+    }
+
+    // Função para adicionar uma nova máquina à lista
+    function adicionarEquipamento(nome, codigo) {
+      const equipamentoDiv = document.createElement('div');
+      equipamentoDiv.classList.add('equipment');
+
+      equipamentoDiv.innerHTML = `
+        <h3>${nome}</h3>
+        <p>Código: ${codigo}</p>
+        <div class="qrcode"></div>
+        <a href="ocorrencia.html?codigo=${codigo}" class="btn">Abrir Ocorrência</a>
+      `;
+
+      // Gerando o QR Code para a máquina recém-cadastrada
+      const qrcodeElement = equipamentoDiv.querySelector('.qrcode');
+      const canvas = gerarQRCode(codigo);
+      qrcodeElement.appendChild(canvas);
+
+      // Adicionando o equipamento à lista
+      document.querySelector('.equipment-list').appendChild(equipamentoDiv);
+    }
+
+    // Evento para cadastro de nova máquina
+    document.getElementById('formCadastro').addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const nome = document.getElementById('nome').value;
+      const codigo = document.getElementById('codigo').value;
+
+      // Adiciona a nova máquina à lista
+      adicionarEquipamento(nome, codigo);
+
+      // Limpar os campos do formulário
+      document.getElementById('nome').value = '';
+      document.getElementById('codigo').value = '';
+    });
+  </script>
+</body>
+</html>
