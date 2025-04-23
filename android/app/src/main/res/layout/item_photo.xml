@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/foto_background"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/image_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/foto_background"
+        android:contentDescription="@string/i_foto_anexada" />
+
+    <ImageButton
+        android:id="@+id/btn_remove"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_black"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/close_xs"
+        android:contentDescription="@string/ib_remover_foto" />
+</androidx.cardview.widget.CardView>

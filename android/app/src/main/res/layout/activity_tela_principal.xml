@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_principal"
+    android:orientation="vertical"
+
+    tools:context=".view.MenuPrincipalActivity"
+    tools:ignore="ExtraText">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_abrir_ocorrencia_menu"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/rounded_button"
+            android:text="Button"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/rounded_button"
+            android:text="Button"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/rounded_button"
+            android:text="Button"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/rounded_button"
+            android:text="Button"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Cor do texto -->
+    tools:layout_editor_absoluteX="38dp"
+    tools:layout_editor_absoluteY="341dp" /> <!-- Aplica o fundo arredondado -->
+    tools:layout_editor_absoluteX="36dp"
+    tools:layout_editor_absoluteY="341dp" />
+
+
+</LinearLayout>

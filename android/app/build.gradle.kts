@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.worksync.repairiq"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.worksync.repairiq"

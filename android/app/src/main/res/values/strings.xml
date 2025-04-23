@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">RepairIQ</string>
+    <string name="titulo_abrir_ocorrencia">Abrir ocorrência</string>
+    <string name="ocorrencia_descreva">Descreva a ocorrência</string>
+    <string name="b_abrir_ocorrencia">Abrir ocorrência</string>
+    <string name="tv_selecione_equipamento">Selecione o equipamento afetado</string>
+    <string name="descricao_botao_fechar">Voltar a tela anterior</string>
+    <string name="tv_prioridade">Qual a prioridade da ocorrência?</string>
+    <string name="rb_alta">Prioridade Alta</string>
+    <string name="rb_media">Prioridade Média</string>
+    <string name="rb_baixa">Prioridade Baixa</string>
+    <string name="ib_qr_code">Escanear QR Code</string>
+    <string name="mb_adicionar_fotos">ADICIONAR FOTOS</string>
+    <string name="i_foto_anexada">Foto Anexada</string>
+    <string name="ib_remover_foto">Remover Foto</string>
+    <string name="mb_abrir_ocorrencia">ABRIR OCORRÊNCIA</string>
 </resources>

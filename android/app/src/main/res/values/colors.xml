@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#BCBCBC</color>
+    <color name="cor_principal">#E2E2E2</color>
+    <color name="cor_texto">#000000</color>
+    <color name="blue">#007BFF</color>
+    <color name="textoBotaoCor">#FFFFFF</color>
+    <color name="CorBotao" />
+    <color name="corBotao">#000000</color>
+    <color name="red">#FF0000</color> <!-- Azul padrão -->
+
 </resources>
