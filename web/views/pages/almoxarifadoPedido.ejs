@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="imagens/logo.webp" alt="Logo da empresa" />
+      </div>
+      <h1>Abrir Pedido ao Almoxarifado</h1>
+    </div>
+
+    <div class="form-container">
+      <form class="form">
+        <div class="form-group">
+          <label for="itemCode">Código do Item</label>
+          <input type="text" id="itemCode" placeholder="Ex: ITEM-123" required />
+        </div>
+
+        <div class="form-group">
+          <label for="itemDescription">Descrição do Item</label>
+          <input type="text" id="itemDescription" placeholder="Ex: Parafuso 10x50" required />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantidade</label>
+          <input type="number" id="quantity" placeholder="Quantidade desejada" required />
+        </div>
+
+        <div class="form-group">
+          <label for="justification">Justificativa</label>
+          <textarea id="justification" rows="4" placeholder="Por que o item é necessário?" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Registrar Pedido</button>
+          <button type="button" class="btn secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

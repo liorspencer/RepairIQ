@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('../partials/head') %>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo-left">
+            <img src="imagens/logo.webp" alt="Logo" class="logo-left">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#empresa">Empresa</a></li>
+                <li><a href="#cliente">Cliente</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button class="login-btn" onclick="window.location.href='login.html'">Login</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção do Carrossel de Imagens -->
+    <section class="carousel">
+        <div class="logo-overlay">
+            <img src="imagens/logo.webp" alt="Logo" class="logo">
+        </div>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-images">
+                <img src="imagens/img1.avif" alt="Imagem 1" class="carousel-slide">
+                <img src="imagens/img2.avif" alt="Imagem 2" class="carousel-slide">
+                <img src="imagens/img3.avif" alt="Imagem 3" class="carousel-slide">
+                <img src="imagens/img1.avif" alt="Imagem 4" class="carousel-slide">
+                <img src="imagens/img2.avif" alt="Imagem 5" class="carousel-slide">
+                <img src="imagens/img3.avif" alt="Imagem 6" class="carousel-slide">
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Seção de Marketing - Abertura de Ocorrências e Manutenção de Máquinas -->
+    <section class="marketing">
+        <div class="container">
+            <h2>Transforme a Gestão de Manutenções Industriais</h2>
+            <p><strong>Otimização, controle e eficiência para sua operação</strong>. Nosso sistema inovador foi desenvolvido para facilitar a gestão de manutenções e a abertura de ocorrências em máquinas industriais, garantindo que sua produção nunca pare.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <h3>Abertura Rápida de Ocorrências</h3>
+                    <p>Registre falhas e problemas com facilidade. Descreva o problema, adicione fotos e defina a prioridade da ocorrência.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Gestão Completa de Manutenções</h3>
+                    <p>Acompanhe manutenções preventivas e corretivas de suas máquinas, com alertas e um histórico detalhado.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Relatórios e Análises Detalhadas</h3>
+                    <p>Receba relatórios personalizados sobre o desempenho de suas máquinas e identifique padrões para melhorar a performance.</p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <h3>Por que escolher nosso sistema?</h3>
+                <ul>
+                    <li><strong>Reduza Custos:</strong> Preveja falhas e minimize manutenções corretivas inesperadas.</li>
+                    <li><strong>Maximize a Produtividade:</strong> Menos paradas, mais produção. Mantenha suas máquinas funcionando por mais tempo.</li>
+                    <li><strong>Decisões Baseadas em Dados:</strong> Com relatórios detalhados, tome decisões mais assertivas e estratégicas.</li>
+                </ul>
+
+                <p><strong>Não deixe que falhas imprevistas atrapalhem sua produção!</strong> Experimente nosso sistema de gestão e leve sua operação a um novo nível de eficiência.</p>
+                <a href="cadastro.html" class="cta-btn">Cadastre-se e Transforme Sua Gestão de Manutenção</a>
+
+
+     <!-- Seção de Empresas Parceiras e Suporte -->
+    <section class="footer-buttons">
+        <button>Empresas Parceiras</button>
+        <button>Suporte</button>
+    </section>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

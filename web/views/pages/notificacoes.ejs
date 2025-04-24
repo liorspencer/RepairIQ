@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="imagens/logo.webp" alt="Logo da empresa" />
+      </div>
+      <h1>Notificações Enviadas</h1>
+    </div>
+
+    <!-- Tabela de Notificações -->
+    <div class="notifications-container">
+      <table class="notifications-table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Data de Envio</th>
+            <th>Conteúdo</th>
+            <th>Visualizado Por</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Exemplo de Notificação -->
+          <tr>
+            <td>Manutenção da Máquina A</td>
+            <td>2025-04-10</td>
+            <td>Atenção: A Máquina A precisa de manutenção urgente.</td>
+            <td>
+              <ul>
+                <li>João Silva</li>
+                <li>Ana Costa</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Reparo na Máquina B</td>
+            <td>2025-04-09</td>
+            <td>A Máquina B passou por reparos, verifique o status.</td>
+            <td>
+              <ul>
+                <li>Paulo Souza</li>
+                <li>Lucas Pereira</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

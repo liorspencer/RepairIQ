@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="imagens/logo.webp" alt="Logo da empresa" />
+    </div>
+    
+    <h2 class="settings-title">Configurações de Manutenção</h2>
+    
+    <div class="form-container">
+      <form>
+        <!-- Modo de Manutenção -->
+        <div class="form-group">
+          <label for="maintenance-mode">Modo de Manutenção</label>
+          <input type="checkbox" id="maintenance-mode" />
+        </div>
+
+        <!-- Mensagem de Manutenção -->
+        <div class="form-group">
+          <label for="maintenance-message">Mensagem de Manutenção</label>
+          <input type="text" id="maintenance-message" placeholder="Digite a mensagem aqui" />
+        </div>
+
+        <!-- Permitir Acesso ao Administrador -->
+        <div class="form-group">
+          <label for="admin-access">Permitir Acesso ao Administrador</label>
+          <input type="checkbox" id="admin-access" />
+        </div>
+
+        <!-- Logs de Erro -->
+        <div class="form-group">
+          <label for="error-logs">Exibir Logs de Erro</label>
+          <input type="checkbox" id="error-logs" />
+        </div>
+
+        <!-- Backup -->
+        <div class="form-group">
+          <button type="button" class="btn">Realizar Backup</button>
+        </div>
+
+        <!-- Notificações Automáticas -->
+        <div class="form-group">
+          <label for="notifications">Enviar Notificação Automática</label>
+          <input type="checkbox" id="notifications" />
+        </div>
+
+        <div class="action-buttons">
+          <button type="submit" class="btn black-btn">Salvar Configurações</button>
+          <button type="reset" class="btn">Limpar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

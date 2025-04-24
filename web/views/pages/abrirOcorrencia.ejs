@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('../partials/head') %>
+<body>
+  <div class="main-wrapper">
+    <div class="form-card">
+      <header class="form-header">
+        <img src="imagens/logo.webp" alt="Logo da empresa" class="logo" />
+        <h2>Abertura de Ocorrência</h2>
+        <p class="subheading">Manutenção de Máquinas Industriais</p>
+      </header>
+
+      <form class="form-body">
+        <div class="form-group">
+          <label for="machineCode">Código da Máquina</label>
+          <input type="text" id="machineCode" placeholder="Ex: MX-2045" required />
+        </div>
+
+        <div class="form-group">
+          <label for="problemDescription">Descrição do Problema</label>
+          <textarea id="problemDescription" rows="5" placeholder="Detalhe o que está acontecendo..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="priority">Prioridade</label>
+            <select id="priority" required>
+              <option value="">Selecione</option>
+              <option value="baixa">Baixa</option>
+              <option value="media">Média</option>
+              <option value="alta">Alta</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="occurrenceDate">Data da Ocorrência</label>
+            <input type="date" id="occurrenceDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" required>
+              <option value="pendente">Pendente</option>
+              <option value="em-andamento">Em Andamento</option>
+              <option value="concluida">Concluída</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Registrar</button>
+          <button type="button" class="btn secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

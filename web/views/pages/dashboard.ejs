@@ -1,37 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <%- include('../partials/head') %>
-  <title>Painel Principal</title>
-
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Configuração do Tailwind para usar Poppins e cores personalizadas -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
-          colors: {
-            vermelho: '#ff4d4d',
-            vermelhoHover: '#e63946',
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-</head>
 <body class="bg-gradient-to-br from-[#1e1e2f] to-[#2c2c3e] min-h-screen flex items-start justify-center py-10">
 
   <div class="w-full max-w-[1200px] px-4 flex flex-col min-h-screen justify-between">
