@@ -2,8 +2,15 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <corners android:radius="12dp"/> <!-- Define o raio das bordas arredondadas -->
-    <solid android:color="@color/white"/> <!-- Cor de fundo -->
-    <stroke android:width="1dp" android:color="@color/gray"/> <!-- Contorno -->
-    <padding android:left="10dp" android:right="10dp"/>
+    <!-- Bordas arredondadas -->
+    <corners android:radius="12dp" />
+
+    <!-- Cor de fundo branca -->
+    <solid android:color="@color/white" />
+
+    <!-- Contorno preto -->
+    <stroke android:width="1dp" android:color="#000000" />
+
+    <!-- Espaçamento interno horizontal -->
+    <padding android:left="10dp" android:right="10dp" />
 </shape>

@@ -24,7 +24,7 @@ public class MenuPrincipalActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        bAbrirOcorrencia = findViewById(R.id.b_abrir_ocorrencia_menu);
+        bAbrirOcorrencia = findViewById(R.id.buttonAbrirOcorrencia);
         bAbrirOcorrencia.setOnClickListener(v -> {
             Intent intent = new Intent(this, AbrirOcorrenciaActivity.class);
             startActivity(intent);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Fundo preto -->
-    <solid android:color="#000000" />
+    <!-- Fundo azul claro -->
+    <solid android:color="#007BFF" />
 
     <!-- Bordas bem arredondadas -->
     <corners android:radius="50dp" />
 
-    <!-- Borda azul -->
+    <!-- Borda azul mais escura para destaque -->
     <stroke
         android:width="2dp"
-        android:color="#007BFF" />
+        android:color="#0056B3" />
 </shape>
