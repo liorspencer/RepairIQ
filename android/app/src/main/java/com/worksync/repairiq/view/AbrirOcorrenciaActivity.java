@@ -83,10 +83,10 @@ public class AbrirOcorrenciaActivity extends AppCompatActivity {
                 }
         );
         // Botão para adicionar foto (apenas como exemplo, você pode modificar)
-        mbAdicionarFoto = findViewById(R.id.b_adicionar_fotos);
+        mbAdicionarFoto = findViewById(R.id.b_adicionar_fotos2);
         mbAdicionarFoto.setOnClickListener(v -> checarPermissao());
 
-        mbAbrirOcorrencia =findViewById(R.id.b_abrir_ocorrencia);
+        mbAbrirOcorrencia =findViewById(R.id.b_abrir_os);
         mbAbrirOcorrencia.setOnClickListener(v -> finalizar());
 
         ibFechar = findViewById(R.id.ib_close);
