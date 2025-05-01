@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".view.AbrirOcorrenciaActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@color/white"
+                android:contentDescription="@string/descricao_botao_fechar"
+                app:srcCompat="@drawable/close" />
+
+            <TextView
+                android:id="@+id/tv_acao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/tv_lista_ocorrencias"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_periodo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/tv_periodo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:layout_gravity="center_vertical"
+                android:text="@string/tv_periodo"
+                android:layout_marginStart="5dp"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:background="@drawable/round_button_list"
+                android:id="@+id/ib_busca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/search" />
+
+            <ImageButton
+                android:background="@drawable/round_button_list"
+                android:backgroundTint="#0000ff"
+                android:id="@+id/ib_esperando_acao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/time" />
+
+            <ImageButton
+                android:background="@drawable/round_button_list"
+                android:backgroundTint="#ffdd00"
+                android:id="@+id/ib_criada_os"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/double_arrow_right" />
+
+            <ImageButton
+                android:background="@drawable/round_button_list"
+                android:backgroundTint="#ff0000"
+                android:id="@+id/ib_recusada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+
+                android:layout_weight="1"
+                app:srcCompat="@drawable/recusada" />
+
+            <ImageButton
+                android:background="@drawable/round_button_list"
+                android:backgroundTint="#00ff00"
+                android:id="@+id/ib_concluida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/check" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

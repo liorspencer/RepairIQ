@@ -19,4 +19,6 @@
     <string name="mb_abrir_os">ABRIR OS</string>
     <string name="abrir_os">ABRIR OS</string>
     <string name="numero_os">Nº OCORRENCIA</string>
+    <string name="tv_lista_ocorrencias">Lista de Ocorrências</string>
+    <string name="tv_periodo">Período:</string>
 </resources>
