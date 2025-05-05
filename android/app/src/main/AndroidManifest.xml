@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RepairIQ"
         tools:targetApi="31">
         <activity
+            android:name=".view.GerenciarOS"
+            android:exported="false" />
+        <activity
             android:name=".ListaOcorrenciaActivity"
             android:exported="false" />
         <activity
