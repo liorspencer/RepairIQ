@@ -200,6 +200,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
         android:text="LANÇAR HORAS"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
@@ -253,6 +254,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
         android:text="LANÇAR PEÇAS UTILIZADAS"
         android:textColor="#FFFFFF" />
 
@@ -261,9 +263,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
         android:text="SALVAR ALTERAÇÕES"
         android:textColor="#FFFFFF" />
 
@@ -275,6 +278,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
         android:text="FINALIZAR OS"
         android:textColor="#FFFFFF" />
 
@@ -283,9 +287,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_button"
-        android:text="SAIR"
+        android:minHeight="30dp"
+        android:text="VOLTAR"
         android:textColor="#FFFFFF" />
 </LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.SuporteTecnico">
+
+    <TextView
+        android:id="@+id/textViewProblema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="DESCREVA O PROBLEMA ENCONTRADO" />
+
+    <EditText
+        android:id="@+id/et_os2"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:maxLength="3000"
+        android:maxLines="6"
+        android:minLines="6"
+        android:paddingVertical="2dp"
+        android:singleLine="false"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textViewAnexar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="ANEXAR IMAGEM" />
+
+    <ImageButton
+        android:id="@+id/ib_qr_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/rounded_inline_button"
+        android:contentDescription="@string/ib_qr_code"
+        android:padding="4dp"
+        android:layout_marginStart="10dp"
+        app:srcCompat="@drawable/qr_code" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEnviarFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:text="ENVIAR"
+        android:textColor="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:minHeight="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="220dp"
+        android:text="VOLTAR"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

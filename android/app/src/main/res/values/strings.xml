@@ -21,4 +21,41 @@
     <string name="numero_os">Nº OCORRENCIA</string>
     <string name="tv_lista_ocorrencias">Lista de Ocorrências</string>
     <string name="tv_periodo">Período:</string>
+
+
+    <string name="politica_privacidade">
+    Política de Privacidade - RepairIQ\n
+    1. Introdução\n
+    Bem-vindo ao RepairIQ! A sua privacidade é uma prioridade para nós. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos as informações dos usuários do nosso aplicativo.\n\n
+    2. Coleta de Informações\n
+    Coletamos os seguintes tipos de informações:\n
+    Informações Pessoais: Nome, e-mail, cargo e dados de login.\n
+    Dados Operacionais: Registros de ordens de serviço (OS), ocorrências e histórico de manutenção.\n
+    Localização: Se permitido pelo usuário, coletamos dados de localização para otimizar a alocação de serviços.\n
+    Mídia: Fotos e vídeos anexados às OSs para documentação da manutenção.\n\n
+    3. Uso das Informações\n
+    As informações coletadas são utilizadas para:\n
+    - Gerenciamento de ordens de serviço e ocorrências;\n
+    - Análise de desempenho e melhoria da manutenção;\n
+    - Envio de notificações e comunicações relevantes;\n
+    - Melhoria da experiência do usuário no aplicativo.\n\n
+    4. Compartilhamento de Dados\n
+    Não compartilhamos suas informações pessoais com terceiros, exceto nos seguintes casos:\n
+    - Quando exigido por lei ou por autoridades competentes;\n
+    - Para operações internas, como análise de dados e suporte técnico;\n
+    - Com parceiros estritamente necessários para o funcionamento do aplicativo.\n\n
+    5. Armazenamento e Proteção de Dados\n
+    Seus dados são armazenados em servidores seguros e protegidos contra acessos não autorizados.\n
+    Utilizamos criptografia e medidas de segurança para garantir a integridade das informações.\n\n
+    6. Direitos do Usuário\n
+    Você tem direito a:\n
+    - Acessar, corrigir ou excluir suas informações pessoais;\n
+    - Solicitar a interrupção do uso de seus dados;\n
+    - Retirar o consentimento para coleta de dados a qualquer momento.\n\n
+    7. Alterações nesta Política\n
+    Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos os usuários sobre mudanças significativas.\n\n
+    8. Contato\n
+    Para mais informações sobre nossa Política de Privacidade, entre em contato pelo e-mail: suporte@repairiq.com.\n\n
+    Esta política garante transparência e conformidade com boas práticas de proteção de dados.
+</string>
 </resources>
