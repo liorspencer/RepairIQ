@@ -1,236 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:fillViewport="true"
-    tools:context=".view.AbrirOcorrenciaActivity">
-        <LinearLayout
+    tools:context=".view.AbrirOs">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:contentDescription="@string/descricao_botao_fechar"
+            app:srcCompat="@drawable/close" />
+
+        <TextView
+            android:id="@+id/tv_acao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/titulo_abrir_os"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:foregroundGravity="left"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textNumOS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:text="@string/numero_os" />
 
-            <LinearLayout
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextNumOs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_descreva_ocorrencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/et_os"
+            android:text="@string/os_descreva"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_os"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:gravity="start|top"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLength="3000"
+            android:maxLines="6"
+            android:minLines="6"
+            android:paddingVertical="2dp"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_selecione_equipamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/sp_equipamento2"
+            android:text="@string/tv_selecione_equipamento"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/sp_equipamento2"
                 android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_edittext" />
+
+            <ImageButton
+                android:id="@+id/ib_qr_code2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:background="@color/white"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/ib_close"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:background="@color/white"
-                    android:contentDescription="@string/descricao_botao_fechar"
-                    app:srcCompat="@drawable/close" />
-
-                <TextView
-                    android:id="@+id/tv_acao"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="@string/titulo_abrir_os"
-                    android:textSize="30sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:foregroundGravity="left"
-                android:gravity="left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textNumOS"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/numero_os" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="72dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editTextNumOs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_descreva_ocorrencia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:labelFor="@id/et_os"
-                    android:text="@string/os_descreva"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/et_os"
-                    style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_edittext"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:importantForAutofill="no"
-                    android:inputType="textMultiLine"
-                    android:maxLength="3000"
-                    android:maxLines="6"
-                    android:minLines="6"
-                    android:paddingVertical="2dp"
-                    android:singleLine="false"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_selecione_equipamento"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:labelFor="@id/sp_equipamento2"
-                    android:text="@string/tv_selecione_equipamento"
-                    android:textSize="16sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Spinner
-                        android:id="@+id/sp_equipamento2"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/rounded_edittext" />
-
-                    <ImageButton
-                        android:id="@+id/ib_qr_code2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="0"
-                        android:background="@drawable/rounded_inline_button"
-                        android:contentDescription="@string/ib_qr_code"
-                        android:padding="4dp"
-                        app:srcCompat="@drawable/qr_code" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_prioridade"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/tv_prioridade"
-                    android:textSize="16sp" />
-
-                <RadioGroup
-                    android:id="@+id/rg_prioridade"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="16dp">
-
-                    <RadioButton
-                        android:id="@+id/rb_alta2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb_alta" />
-
-                    <RadioButton
-                        android:id="@+id/rb_media2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb_media" />
-
-                    <RadioButton
-                        android:id="@+id/rb_baixa2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rb_baixa" />
-
-                </RadioGroup>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/b_adicionar_fotos2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/black"
-                    android:padding="14dp"
-                    android:text="@string/mb_adicionar_fotos"
-                    app:icon="@drawable/add_photo" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_fotos"
-                    android:layout_width="match_parent"
-                    android:layout_height="112dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rv_background"
-                    android:clipToPadding="true"
-                    android:elevation="4dp"
-                    android:orientation="horizontal"
-                    android:overScrollMode="never"
-                    android:padding="8dp"
-                    android:scrollbars="none"
-                    android:visibility="gone"
-                    tools:listitem="@layout/item_photo" />
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/b_abrir_os"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:layout_marginStart="126dp"
-                    android:layout_marginEnd="126dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="@color/black"
-                    android:padding="14dp"
-                    android:text="@string/mb_abrir_os"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                android:layout_marginStart="5dp"
+                android:layout_weight="0"
+                android:background="@drawable/rounded_inline_button"
+                android:contentDescription="@string/ib_qr_code"
+                android:padding="4dp"
+                app:srcCompat="@drawable/qr_code" />
         </LinearLayout>
-</ScrollView>
+
+        <TextView
+            android:id="@+id/tv_prioridade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tv_prioridade"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/rg_prioridade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb_alta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_alta" />
+
+            <RadioButton
+                android:id="@+id/rb_media2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_media" />
+
+            <RadioButton
+                android:id="@+id/rb_baixa2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rb_baixa" />
+
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_adicionar_fotos2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/black"
+            android:padding="14dp"
+            android:text="@string/mb_adicionar_fotos"
+            app:icon="@drawable/add_photo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fotos"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rv_background"
+            android:clipToPadding="true"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:padding="8dp"
+            android:scrollbars="none"
+            android:visibility="gone"
+            tools:listitem="@layout/item_photo" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_abrir_os"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginStart="126dp"
+            android:layout_marginEnd="126dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:padding="14dp"
+            android:text="@string/mb_abrir_os"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

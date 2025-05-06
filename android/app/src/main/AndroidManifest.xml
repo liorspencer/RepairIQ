@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RepairIQ"
         tools:targetApi="31">
         <activity
+            android:name=".view.AbrirOs"
+            android:exported="false" />
+        <activity
             android:name=".view.RedefinirSenha"
             android:exported="false" />
         <activity
