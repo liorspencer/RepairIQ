@@ -1,4 +1,4 @@
-package com.worksync.repairiq;
+package com.worksync.repairiq.view;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.worksync.repairiq.R;
 
 public class ListaOcorrenciaActivity extends AppCompatActivity {
 
