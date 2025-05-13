@@ -124,7 +124,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_fotos"
+            android:id="@+id/rv_lista_ocorrencia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
@@ -137,7 +137,7 @@
             android:padding="8dp"
             android:scrollbars="none"
             android:visibility="visible"
-            tools:listitem="@layout/item_photo" />
+            tools:listitem="@layout/item_ocorrencia" />
 
     </LinearLayout>
 </ScrollView>

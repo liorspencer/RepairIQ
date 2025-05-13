@@ -2,17 +2,47 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
+    android:layout_marginBottom="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/lista_background"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="10dp"
     app:cardPreventCornerOverlap="false"
     android:elevation="2dp">
 
-    <ImageView
-        android:id="@+id/image_photo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:background="@drawable/lista_background"
-        android:contentDescription="@string/i_foto_anexada" />
+    <TextView
+        android:layout_margin="12dp"
+        android:id="@+id/et_item_ocorrencia_id"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textAlignment="textStart"
+        android:text="#"
+        />
+
+    <TextView
+        android:layout_margin="12dp"
+        android:id="@+id/et_item_ocorrencia_tag"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:text="MAQUINA"
+        />
+
+    <TextView
+        android:layout_margin="12dp"
+        android:id="@+id/et_item_ocorrencia_data"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="end"
+        android:text="DATA"
+        />
+
+    <TextView
+        android:layout_margin="12dp"
+        android:id="@+id/et_item_ocorrencia_status"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="end|bottom"
+        android:text="Situação: "
+        />
+
 </androidx.cardview.widget.CardView>
