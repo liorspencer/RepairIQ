@@ -34,7 +34,7 @@
             android:name=".view.GerenciarOS"
             android:exported="false" />
         <activity
-            android:name=".ListaOcorrenciaActivity"
+            android:name=".view.ListaOcorrenciaActivity"
             android:exported="false" />
         <activity
             android:name=".view.AbrirOcorrenciaActivity"

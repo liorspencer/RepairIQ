@@ -9,7 +9,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.worksync.repairiq.ListaOcorrenciaActivity;
 import com.worksync.repairiq.R;
 
 public class MenuPrincipalActivity extends AppCompatActivity {
