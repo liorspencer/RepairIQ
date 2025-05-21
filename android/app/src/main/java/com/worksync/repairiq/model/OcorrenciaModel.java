@@ -23,5 +23,4 @@ public class OcorrenciaModel implements Serializable {
         this.fotos = fotos;
         this.status = StatusOcorrencia.ESPERANDO_ACAO;
     }
-
 }
