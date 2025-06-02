@@ -5,17 +5,17 @@ async function cadastrarFuncionario(pool, funcionario) {
     return resultado;
 }
 
-async function buscarFuncionarios(pool) {
+async function buscarFuncionarios(pool, busca) {
     
 }
 
 async function buscarLogin(pool, login) {
-    const sql = `SELECT * FROM funcionario WHERE login = ?`;
+    const sql = `SELECT * FROM funcionario WHERE login = ? AND ativo = 1`;
     const [resultado] = await pool.execute(sql, login);
-    return resultado;
+    return resultado[0];
 }
 
-async function Funcionario(pool, id, estado) {
+async function statusFuncionario(pool, id, estado) {
     const sql = `UPDATE funcionario SET ativo = ? WHERE id - ?`;
     const valores = [estado, id];
     const [resultado] = await pool.execute(sql, valores);

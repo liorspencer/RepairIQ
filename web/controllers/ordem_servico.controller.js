@@ -1,3 +1,4 @@
+const OS = require("../models/ordem.model.js");
 
 const mostrarOrdemServico = async (req, res) => {
 
