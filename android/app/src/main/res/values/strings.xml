@@ -8,9 +8,9 @@
     <string name="tv_selecione_equipamento">Selecione o equipamento afetado</string>
     <string name="descricao_botao_fechar">Voltar a tela anterior</string>
     <string name="tv_prioridade">Qual a prioridade da ocorrência?</string>
-    <string name="rb_alta">Prioridade Alta</string>
-    <string name="rb_media">Prioridade Média</string>
-    <string name="rb_baixa">Prioridade Baixa</string>
+    <string name="rb_alta">ALTA</string>
+    <string name="rb_media">MEDIA</string>
+    <string name="rb_baixa">BAIXA</string>
     <string name="ib_qr_code">Escanear QR Code</string>
     <string name="mb_adicionar_fotos">ADICIONAR FOTOS</string>
     <string name="i_foto_anexada">Foto Anexada</string>
@@ -58,4 +58,18 @@
     Para mais informações sobre nossa Política de Privacidade, entre em contato pelo e-mail: suporte@repairiq.com.\n\n
     Esta política garante transparência e conformidade com boas práticas de proteção de dados.
 </string>
+
+    <string-array name="equipamentos_array">
+        <item>Motor XYZ</item>
+        <item>Esteira A1</item>
+        <item>Compressor Z5</item>
+        <item>Bomba B2</item>
+        <item>Ventilador V8</item>
+        <item>Esteira A2</item>
+        <item>Motor ABC</item>
+        <item>Compressor Q7</item>
+        <item>Bomba C3</item>
+        <item>Ventilador V9</item>
+    </string-array>
+
 </resources>

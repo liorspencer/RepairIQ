@@ -1,48 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:layout_marginBottom="8dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/lista_background"
-    app:cardCornerRadius="10dp"
-    app:cardPreventCornerOverlap="false"
-    android:elevation="2dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="6dp">
 
-    <TextView
-        android:layout_margin="12dp"
-        android:id="@+id/et_item_ocorrencia_id"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:textAlignment="textStart"
-        android:text="#"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-    <TextView
-        android:layout_margin="12dp"
-        android:id="@+id/et_item_ocorrencia_tag"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="bottom"
-        android:text="MAQUINA"
-        />
+        <TextView
+            android:id="@+id/et_item_ocorrencia_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID #1"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
-    <TextView
-        android:layout_margin="12dp"
-        android:id="@+id/et_item_ocorrencia_data"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="end"
-        android:text="DATA"
-        />
+        <TextView
+            android:id="@+id/et_item_ocorrencia_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Equipamento: Motor XYZ"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
 
-    <TextView
-        android:layout_margin="12dp"
-        android:id="@+id/et_item_ocorrencia_status"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="end|bottom"
-        android:text="Situação: "
-        />
+        <TextView
+            android:id="@+id/tv_prioridade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridade: ALTA"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
 
+        <TextView
+            android:id="@+id/et_item_ocorrencia_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: ESPERANDO_ACAO"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tv_data_abertura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data: 02/06/2025 08:35"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tv_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrição: Falha no motor principal da linha de produção"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
