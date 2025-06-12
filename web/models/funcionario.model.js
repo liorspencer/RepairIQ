@@ -6,7 +6,23 @@ async function cadastrarFuncionario(pool, funcionario) {
 }
 
 async function buscarFuncionarios(pool, busca) {
-    
+    let sql = `SELECT * FROM funcionario WHERE 1=1`;
+    const valores = [];
+
+    // Adiciona filtro por login, se fornecido
+    if (busca.login) {
+        sql += ` AND login LIKE ?`;
+        valores.push(`%${busca.login}%`);
+    }
+
+    // Adiciona filtro por status (ativo/inativo), se fornecido
+    if (busca.ativo !== undefined) {
+        sql += ` AND ativo = ?`;
+        valores.push(busca.ativo);
+    }
+
+    const [resultado] = await pool.execute(sql, valores);
+    return resultado;
 }
 
 async function buscarLogin(pool, login) {
@@ -20,4 +36,19 @@ async function statusFuncionario(pool, id, estado) {
     const valores = [estado, id];
     const [resultado] = await pool.execute(sql, valores);
     return resultado;
+}
+
+async function atualizarFuncionario(pool, id, funcionario) {
+    const sql = `UPDATE funcionario SET nome = ?, login = ?, senha = ? WHERE id = ?`;
+    const valores = [funcionario.nome, funcionario.login, funcionario.senha, id];
+    const [resultado] = await pool.execute(sql, valores);
+    return resultado;
+}
+
+module.exports = {
+    cadastrarFuncionario,
+    buscarFuncionarios,
+    buscarLogin,
+    statusFuncionario,
+    atualizarFuncionario
 }
