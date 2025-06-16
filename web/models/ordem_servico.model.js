@@ -1,3 +1,3 @@
-async function name(params) {
+async function cadastrarOrdemServico(params) {
     
 }
