@@ -4,7 +4,7 @@ const notificacaoController = {
 
     buscarPorFuncionario: async (req, res) => {
         try {
-            const notificacoes = await Notificacao.buscarIdFuncionario(req.params.funcionarioId, req.dbPool);
+            const notificacoes = await Notificacao.buscarIdFuncionario(req.params.funcionarioId);
             res.json(notificacoes);
         } catch (error) {
             res.status(500).json({ error: error.message });
@@ -13,7 +13,7 @@ const notificacaoController = {
 
     cadastrar: async (req, res) => {
         try {
-            const id = await Notificacao.cadastrar(req.body, req.dbPool);
+            const id = await Notificacao.cadastrar(req.body);
             res.status(201).json({ id, ...req.body });
         } catch (error) {
             res.status(400).json({ error: error.message });
@@ -22,7 +22,7 @@ const notificacaoController = {
 
     marcarComoLido: async (req, res) => {
         try {
-            await Notificacao.marcarComoLido(req.params.id, req.dbPool);
+            await Notificacao.marcarComoLido(req.params.id);
             res.json({ message: 'Notificação marcada como lida' });
         } catch (error) {
             res.status(400).json({ error: error.message });
@@ -31,7 +31,7 @@ const notificacaoController = {
 
     apagar: async (req, res) => {
         try {
-            await Notificacao.apagar(req.params.id, req.dbPool);
+            await Notificacao.apagar(req.params.id);
             res.json({ message: 'Notificação deletada com sucesso' });
         } catch (error) {
             res.status(500).json({ error: error.message });

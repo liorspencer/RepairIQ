@@ -21,9 +21,10 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.14.1",
+    "mysql": "^2.18.1",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
+    "serve-favicon": "^2.5.1",
     "tailwindcss": "^4.0.14"
   }
 }

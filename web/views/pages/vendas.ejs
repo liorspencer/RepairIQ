@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+<body class="bg-base-200 min-h-screen flex items-center justify-center">
+    <div class="card w-md max-w-md shadow-xl bg-base-100">
+      <div class="card-body">
+        <h2 class="card-title text-primary">Entre em contato com o time de vendas</h2>
+        <form id="contactForm" class="space-y-4">
+          <div class="form-control">
+            <label class="label" for="nome">
+              <span class="label-text">Nome</span>
+            </label>
+            <br>
+            <input type="text" id="nome" class="input input-bordered" required />
+          </div>
+  
+          <div class="form-control">
+            <label class="label" for="email">
+              <span class="label-text">E-mail</span>
+            </label>
+            <br>
+            <input type="email" id="email" class="input input-bordered" required />
+          </div>
+  
+          <div class="form-control">
+            <label class="label" for="mensagem">
+              <span class="label-text">Mensagem</span>
+            </label>
+            <br>
+            <textarea id="mensagem" class="textarea textarea-bordered" rows="4" required></textarea>
+          </div>
+  
+          <div class="form-control mt-4">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+        <p id="resposta" class="text-success hidden mt-4">Mensagem enviada com sucesso!</p>
+      </div>
+    </div>
+</body>
+</html>

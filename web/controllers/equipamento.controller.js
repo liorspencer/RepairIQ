@@ -3,7 +3,7 @@ const Equipamento = require('../models/equipamento.model');
 const equipamentoController = {
   buscarTodos: async (req, res) => {
     try {
-      const equipamentos = await Equipamento.buscarTodos(req.dbPool);
+      const equipamentos = await Equipamento.buscarTodos();
       res.json(equipamentos);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -12,7 +12,7 @@ const equipamentoController = {
 
   buscarPorId: async (req, res) => {
     try {
-      const equipamento = await Equipamento.buscarId(req.params.id, req.dbPool);
+      const equipamento = await Equipamento.buscarId(req.params.id);
       if (!equipamento) {
         return res.status(404).json({ message: 'Equipamento não encontrado' });
       }
@@ -24,7 +24,7 @@ const equipamentoController = {
 
   cadastrar: async (req, res) => {
     try {
-      const id = await Equipamento.cadastrar(req.body, req.dbPool);
+      const id = await Equipamento.cadastrar(req.body);
       res.status(201).json({ id, ...req.body });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -33,7 +33,7 @@ const equipamentoController = {
 
   atualizar: async (req, res) => {
     try {
-      await Equipamento.atualizar(req.params.id, req.body, req.dbPool);
+      await Equipamento.atualizar(req.params.id, req.body);
       res.json({ message: 'Equipamento atualizado com sucesso' });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -42,7 +42,7 @@ const equipamentoController = {
 
   apagar: async (req, res) => {
     try {
-      await Equipamento.apagar(req.params.id, req.dbPool);
+      await Equipamento.apagar(req.params.id);
       res.json({ message: 'Equipamento deletado com sucesso' });
     } catch (error) {
       res.status(500).json({ error: error.message });

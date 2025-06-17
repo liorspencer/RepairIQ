@@ -1,102 +1,87 @@
-function definirRotas(app){
-    app.get("/", (req,res) => {
-        res.render("index", {
-            titulo: "Página Inicial",
-            mensagem: "Se você está vendo isso, funcionou!"
-        });
-        console.log("Página Inicial Acessado.")
+const express = require('express');
+const path = require('path');
+const authRoutes = require('./auth.routes');
+const funcionarioRoutes = require('./funcionario.routes');
+const equipamentoRoutes = require('./equipamento.routes');
+const ocorrenciaRoutes = require('./ocorrencia_routes');
+const ordemServicoRoutes = require('./ordem_servico.routes');
+const notificacaoRoutes = require('./notificacao.routes');
+const grupoFuncionarioRoutes = require('./grupo_funcionario.routes');
+const registroAuditoriaRoutes = require('./registro_auditoria.routes');
+
+// Função para definir as rotas no aplicativo Express
+exports.definirRotas = (app) => {
+
+  // Rota principal - página inicial
+  app.get('/', (req, res) => {
+    res.render('index',{
+      titulo: "Página Inicial"
     });
-    app.get("/login", (req,res) => {
-        res.render("pages/login", {
-            titulo: "Login",
-        })
-        console.log("Login Acessado.")
-    })
+  });
 
-    app.get("/dashboard", (req,res) => {
-        res.render("pages/dashboard", {
-            titulo: "Dashboard",
-        })
-        console.log("Dashboard Acessado.")
-    })
-
-    app.get("/abrirOcorrencia", (req,res) => {
-        res.render("pages/abrirOcorrencia", {
-            titulo: "abrir Ocorrencia",
-        })
-        console.log("abrirOcorrencia Acessado.")
-    })
-
-    app.get("/almoxarifadoPedido", (req,res) => {
-        res.render("pages/almoxarifadoPedido", {
-            titulo: "Pedido ao Almoxarifado",
-        })
-        console.log("almoxarifadoPedido Acessado.")
-    })
-
-    app.get("/cadastroFuncion", (req,res) => {
-        res.render("pages/cadastroFuncion", {
-            titulo: "Cadastro de Funcionários",
-        })
-        console.log("cadastroFuncion Acessado.")
-    })
-
-    app.get("/cadastroMaq", (req,res) => {
-        res.render("pages/cadastroMaq", {
-            titulo: "Cadastro de Maquinas",
-        })
-        console.log("cadastroMaq Acessado.")
-    })
-
-    app.get("/comandos", (req,res) => {
-        res.render("pages/comandos", {
-            titulo: "Comandos",
-        })
-        console.log("comandos Acessado.")
-    })
-
-    app.get("/configuracoes", (req,res) => {
-        res.render("pages/configuracoes", {
-            titulo: "Configurações",
-        })
-        console.log("configuracoes Acessado.")
-    })
-
-    app.get("/gerenEquipamentos", (req,res) => {
-        res.render("pages/gerenEquipamentos", {
-            titulo: "Gerenciamento de Equipamentos",
-        })
-        console.log("gerenEquipamentos Acessado.")
-    })
-
-    app.get("/inicial", (req,res) => {
-        res.render("pages/inicial", {
-            titulo: "Pagina Inicial",
-        })
-        console.log("inicial Acessado.")
-    })
-
-    app.get("/listaOcorrencia", (req,res) => {
-        res.render("pages/listaOcorrencia", {
-            titulo: "Lista Ocorrencia",
-        })
-        console.log("comandos Acessado.")
-    })
-
-    app.get("/listaOs", (req,res) => {
-        res.render("pages/listaOs", {
-            titulo: "Lista Os",
-        })
-        console.log("listaOs Acessado.")
-    })
-
-    app.get("/notificacoes", (req,res) => {
-        res.render("pages/notificacoes", {
-            titulo: "Notificacoes",
-        })
-        console.log("notificacoes Acessado.")
-    })
-}
-
-
-module.exports={definirRotas};
+  // Rota principal - página inicial
+  app.get('/vendas', (req, res) => {
+    res.render('pages/vendas',{
+      titulo: "Contato"
+    });
+  });
+  
+  // Rotas para as páginas
+  app.get('/login', (req, res) => {
+    res.render('pages/login',{
+      titulo: "Login"
+    });
+  });
+  
+  app.get('/dashboard', (req, res) => {
+    res.render('pages/dashboard',{
+      titulo: "Dashboard"
+    });
+  });
+  
+  app.get('/abrir-ocorrencia', (req, res) => {
+    res.render('pages/abrirOcorrencia',{
+      titulo: "Abrir Ocorrência"
+    });
+  });
+  
+  app.get('/lista-ocorrencias', (req, res) => {
+    res.render('pages/listaOcorrencias',{
+      titulo: "Ocorrências"
+    });
+  });
+  
+  app.get('/lista-os', (req, res) => {
+    res.render('pages/listaOs',{
+      titulo: "Ordens de Serviço"
+    });
+  });
+  
+  app.get('/cadastro-funcionario', (req, res) => {
+    res.render('pages/cadastroFuncion',{
+      titulo: "Cadastrar Funcionário"
+    });
+  });
+  
+  app.get('/gerenciar-equipamentos', (req, res) => {
+    res.render('pages/gerenEquipamentos',{
+      titulo: "Gerenciar Equipamentos"
+    });
+  });
+  
+  app.get('/notificacoes', (req, res) => {
+    res.render('pages/notificacoes',{
+      titulo: "Notificações"
+    });
+  });
+  
+  // API Routes
+  app.use('/api/auth', authRoutes);
+  app.use('/api/funcionarios', funcionarioRoutes);
+  app.use('/api/equipamentos', equipamentoRoutes);
+  app.use('/api/ocorrencias', ocorrenciaRoutes);
+  app.use('/api/ordens-servico', ordemServicoRoutes);
+  app.use('/api/notificacoes', notificacaoRoutes);
+  app.use('/api/grupos-funcionarios', grupoFuncionarioRoutes);
+  app.use('/api/registro-auditoria', registroAuditoriaRoutes);
+};

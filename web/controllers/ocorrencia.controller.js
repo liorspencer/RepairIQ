@@ -3,7 +3,7 @@ const Ocorrencia = require('../models/ocorrencia.model');
 const ocorrenciaController = {
   buscarTodos: async (req, res) => {
     try {
-      const ocorrencias = await Ocorrencia.buscarTodos(req.dbPool);
+      const ocorrencias = await Ocorrencia.buscarTodos();
       res.json(ocorrencias);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -12,7 +12,7 @@ const ocorrenciaController = {
 
   buscarPorId: async (req, res) => {
     try {
-      const ocorrencia = await Ocorrencia.buscarPorId(req.params.id, req.dbPool);
+      const ocorrencia = await Ocorrencia.buscarPorId(req.params.id);
       if (!ocorrencia) {
         return res.status(404).json({ message: 'Ocorrência não encontrada' });
       }
@@ -24,7 +24,7 @@ const ocorrenciaController = {
 
   buscarPorEquipamento: async (req, res) => {
     try {
-      const ocorrencias = await Ocorrencia.buscarPorIdEquipamento(req.params.equipamentoId, req.dbPool);
+      const ocorrencias = await Ocorrencia.buscarPorIdEquipamento(req.params.equipamentoId);
       res.json(ocorrencias);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -33,7 +33,7 @@ const ocorrenciaController = {
 
   cadastrar: async (req, res) => {
     try {
-      const id = await Ocorrencia.cadastrar(req.body, req.dbPool);
+      const id = await Ocorrencia.cadastrar(req.body);
       res.status(201).json({ id, ...req.body });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -42,7 +42,7 @@ const ocorrenciaController = {
 
   atualizar: async (req, res) => {
     try {
-      await Ocorrencia.atualizar(req.params.id, req.body, req.dbPool);
+      await Ocorrencia.atualizar(req.params.id, req.body);
       res.json({ message: 'Ocorrência atualizada com sucesso' });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -51,7 +51,7 @@ const ocorrenciaController = {
 
   apagar: async (req, res) => {
     try {
-      await Ocorrencia.apagar(req.params.id, req.dbPool);
+      await Ocorrencia.apagar(req.params.id);
       res.json({ message: 'Ocorrência deletada com sucesso' });
     } catch (error) {
       res.status(500).json({ error: error.message });

@@ -3,7 +3,7 @@ const OrdemServicoFuncionario = require('../models/ordem_servico_funcionario.mod
 const ordemServicoFuncionarioController = {
   buscarPorOrdemServico: async (req, res) => {
     try {
-      const funcionarios = await OrdemServicoFuncionario.buscarPorIdOrdemServico(req.params.ordemServicoId, req.dbPool);
+      const funcionarios = await OrdemServicoFuncionario.buscarPorIdOrdemServico(req.params.ordemServicoId);
       res.json(funcionarios);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -12,7 +12,7 @@ const ordemServicoFuncionarioController = {
 
   buscarPorFuncionario: async (req, res) => {
     try {
-      const ordens = await OrdemServicoFuncionario.buscarPorIdFuncionario(req.params.funcionarioId, req.dbPool);
+      const ordens = await OrdemServicoFuncionario.buscarPorIdFuncionario(req.params.funcionarioId);
       res.json(ordens);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -24,7 +24,7 @@ const ordemServicoFuncionarioController = {
       await OrdemServicoFuncionario.create({
         fk_ORDEM_SERVICO_id: req.params.ordemServicoId,
         fk_FUNCIONARIO_id: req.body.funcionarioId
-      }, req.dbPool);
+      });
       res.status(201).json({ message: 'Funcionário atribuído à ordem de serviço' });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -36,8 +36,7 @@ const ordemServicoFuncionarioController = {
       await OrdemServicoFuncionario.updateDataFim(
         req.params.ordemServicoId,
         req.params.funcionarioId,
-        new Date(),
-        req.dbPool
+        new Date()
       );
       res.json({ message: 'Tarefa marcada como concluída' });
     } catch (error) {
@@ -49,8 +48,7 @@ const ordemServicoFuncionarioController = {
     try {
       await OrdemServicoFuncionario.delete(
         req.params.ordemServicoId,
-        req.params.funcionarioId,
-        req.dbPool
+        req.params.funcionarioId
       );
       res.json({ message: 'Funcionário removido da ordem de serviço' });
     } catch (error) {

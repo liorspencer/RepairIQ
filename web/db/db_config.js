@@ -1,33 +1,36 @@
-// Importa a versão promise do mysql2
-const mysql = require('mysql2/promise');
+const mysql = require('mysql');
 
-// Objeto que armazena pools de banco
-const pools = {};
+// Cria a conexão global
+const connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
 
-// Retorna (ou cria) um pool de conexão para o banco de dados especificado.
-function obterPool(nomeBanco) {
-    // Se já existe um pool, retorna ele
-    if (pools[nomeBanco]) {
-        return pools[nomeBanco];
+// Conecta ao banco
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
     }
+    console.log('Connected to the database!');
+});
 
-    // Se não existe, cria um novo pool e armazena no cache
-    pools[nomeBanco] = mysql.createPool({
-        host: process.env.DB_HOST, //IP do Banco
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: nomeBanco,
-        waitForConnections: true,
-        connectionLimit: 10,
-        queueLimit: 0 
+// Função para executar queries com parâmetros
+function query(sql, params = []) {
+    return new Promise((resolve, reject) => {
+        connection.query(sql, params, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
+            }
+        });
     });
-
-    return pools[nomeBanco];
 }
 
-
-
-//Exportar o conteudo do objeto bd para acessar fora do arquivo banco.js
+// Exporta a função de query
 module.exports = {
-    obterPool
+    query
 };

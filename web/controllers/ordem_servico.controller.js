@@ -3,7 +3,7 @@ const OrdemServico = require('../models/ordem_servico.model.js');
 const ordemServicoController = {
   buscarTodos: async (req, res) => {
     try {
-      const ordens = await OrdemServico.buscarTodos(req.dbPool);
+      const ordens = await OrdemServico.buscarTodos();
       res.json(ordens);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -12,7 +12,7 @@ const ordemServicoController = {
 
   buscarPorId: async (req, res) => {
     try {
-      const ordem = await OrdemServico.buscarPorId(req.params.id, req.dbPool);
+      const ordem = await OrdemServico.buscarPorId(req.params.id);
       if (!ordem) {
         return res.status(404).json({ message: 'Ordem de serviço não encontrada' });
       }
@@ -24,7 +24,7 @@ const ordemServicoController = {
 
   buscarPorEquipamento: async (req, res) => {
     try {
-      const ordens = await OrdemServico.buscarPorIdEquipamento(req.params.equipamentoId, req.dbPool);
+      const ordens = await OrdemServico.buscarPorIdEquipamento(req.params.equipamentoId);
       res.json(ordens);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -33,7 +33,7 @@ const ordemServicoController = {
 
   buscarPorOcorrencia: async (req, res) => {
     try {
-      const ordens = await OrdemServico.buscarPorIdOcorrencia(req.params.ocorrenciaId, req.dbPool);
+      const ordens = await OrdemServico.buscarPorIdOcorrencia(req.params.ocorrenciaId);
       res.json(ordens);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -42,7 +42,7 @@ const ordemServicoController = {
 
   cadastrar: async (req, res) => {
     try {
-      const id = await OrdemServico.cadastrar(req.body, req.dbPool);
+      const id = await OrdemServico.cadastrar(req.body);
       res.status(201).json({ id, ...req.body });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -51,7 +51,7 @@ const ordemServicoController = {
 
   atualizar: async (req, res) => {
     try {
-      await OrdemServico.atualizar(req.params.id, req.body, req.dbPool);
+      await OrdemServico.atualizar(req.params.id, req.body);
       res.json({ message: 'Ordem de serviço atualizada com sucesso' });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -63,7 +63,7 @@ const ordemServicoController = {
       await OrdemServico.atualizar(req.params.id, { 
         status: 2, // Status para "Fechada"
         data_fechamento: new Date() 
-      }, req.dbPool);
+      });
       res.json({ message: 'Ordem de serviço fechada com sucesso' });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -72,7 +72,7 @@ const ordemServicoController = {
 
   apagar: async (req, res) => {
     try {
-      await OrdemServico.apagar(req.params.id, req.dbPool);
+      await OrdemServico.apagar(req.params.id);
       res.json({ message: 'Ordem de serviço deletada com sucesso' });
     } catch (error) {
       res.status(500).json({ error: error.message });
