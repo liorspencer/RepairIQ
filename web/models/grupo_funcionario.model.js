@@ -1,41 +1,27 @@
-async function cadastrarGrupoFuncionario(pool, grupo_funcinario) {
-    const sql = `INSERT INTO grupo_funcionario (nome_grupo, descricoes, permicoes) VALUES (?, ?, ?)`;
-    const valores = [grupo_funcionario.nome_grupo, grupo_funcionario.descricoes, grupo_funcionario.permicoes];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-async function buscarGrupoFuncionarios(pool, busca) {
-    let sql = `SELECT * FROM grupo_funcionario WHERE 1=1`;
-    const valores = [];
-
-    // Adiciona filtro por login, se fornecido
-    if (busca) {
-        sql += ` AND nome_grupo LIKE ?`;
-        valores.push(`%${busca}%`);
+class GrupoFuncionario {
+    static async buscarTodos(dbPool) {
+      const [rows] = await dbPool.query('SELECT * FROM GRUPO_FUNCIONARIO');
+      return rows;
     }
-
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-async function statusFuncionario(pool, id, estado) {
-    const sql = `UPDATE funcionario SET ativo = ? WHERE id - ?`;
-    const valores = [estado, id];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-async function atualizarGrupoFuncionario(pool, id, grupo_funcionario) {
-    const sql = `UPDATE funcionario SET nome_grupo = ?, descricoes = ?, permicoes = ? WHERE id = ?`;
-    const valores = [grupo_funcionario.nome_grupo, grupo_funcionario.descricoes, grupo_funcionario.permicoes, id];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-module.exports = {
-    cadastrarGrupoFuncionario,
-    buscarGrupoFuncionarios,
-    statusFuncionario,
-    atualizarGrupoFuncionario
-}
+  
+    static async cadastrar({ nome_grupo, descricoes }, dbPool) {
+      const [result] = await dbPool.query(
+        'INSERT INTO GRUPO_FUNCIONARIO (nome_grupo, descricoes) VALUES (?, ?)',
+        [nome_grupo, descricoes]
+      );
+      return result.insertId;
+    }
+  
+    static async atualizar(id, { nome_grupo, descricoes }, dbPool) {
+      await dbPool.query(
+        'UPDATE GRUPO_FUNCIONARIO SET nome_grupo = ?, descricoes = ? WHERE id = ?',
+        [nome_grupo, descricoes, id]
+      );
+    }
+  
+    static async apagar(id, dbPool) {
+      await dbPool.query('DELETE FROM GRUPO_FUNCIONARIO WHERE id = ?', [id]);
+    }
+  }
+  
+  module.exports = GrupoFuncionario;

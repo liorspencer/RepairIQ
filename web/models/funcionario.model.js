@@ -1,54 +1,77 @@
-async function cadastrarFuncionario(pool, funcionario) {
-    const sql = `INSERT INTO funcionario (nome, login, senha) VALUES (?, ?, ?)`;
-    const valores = [funcionario.nome, funcionario.login, funcionario.senha];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const saltRounds = 10;
+const secret = process.env.JWT_SECRET || 'seuSegredoMuitoSecreto';
 
-async function buscarFuncionarios(pool, busca) {
-    let sql = `SELECT * FROM funcionario WHERE 1=1`;
-    const valores = [];
-
-    // Adiciona filtro por login, se fornecido
-    if (busca.login) {
-        sql += ` AND login LIKE ?`;
-        valores.push(`%${busca.login}%`);
+class Funcionario {
+    static async buscarTodos(dbPool) {
+        const [rows] = await dbPool.query('SELECT * FROM FUNCIONARIO');
+        return rows;
     }
 
-    // Adiciona filtro por status (ativo/inativo), se fornecido
-    if (busca.ativo !== undefined) {
-        sql += ` AND ativo = ?`;
-        valores.push(busca.ativo);
+    static async buscarPorId(id, dbPool) {
+        const [rows] = await dbPool.query('SELECT * FROM FUNCIONARIO WHERE id = ?', [id]);
+        return rows[0];
     }
 
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
+    static async buscarPorLogin(login, dbPool) {
+        const [rows] = await dbPool.query('SELECT * FROM FUNCIONARIO WHERE login = ?', [login]);
+        return rows[0];
+    }
+
+    static async cadastrar({ nome, login, senha, ativo, nivel_acesso }, dbPool) {
+        // Hash da senha antes de salvar
+        const hashedPassword = await bcrypt.hash(senha, saltRounds);
+        const [result] = await dbPool.query(
+            'INSERT INTO FUNCIONARIO (nome, login, senha, ativo, nivel_acesso) VALUES (?, ?, ?, ?, ?)',
+            [nome, login, hashedPassword, ativo, nivel_acesso]
+        );
+        return result.insertId;
+    }
+
+    static async atualizar(id, { nome, login, senha, ativo, nivel_acesso }, dbPool) {
+        let updateQuery = 'UPDATE FUNCIONARIO SET nome = ?, login = ?, ativo = ?, nivel_acesso = ?';
+        let params = [nome, login, ativo, nivel_acesso];
+
+        // Se senha foi fornecida, atualiza
+        if (senha) {
+            const hashedPassword = await bcrypt.hash(senha, saltRounds);
+            updateQuery += ', senha = ?';
+            params.push(hashedPassword);
+        }
+
+        updateQuery += ' WHERE id = ?';
+        params.push(id);
+
+        await dbPool.query(updateQuery, params);
+    }
+
+    // Método para verificar a senha
+    static async checarSenha(senha, hash) {
+        return await bcrypt.compare(senha, hash);
+    }
+
+    // Gerar token JWT
+    static gerarToken(funcionario) {
+        return jwt.sign(
+            {
+                id: funcionario.id,
+                login: funcionario.login,
+                nivel_acesso: funcionario.nivel_acesso
+            },
+            secret,
+            { expiresIn: '730h' } // Token expira em 1 mês
+        );
+    }
+
+    // Verificar token JWT
+    static verificarToken(token) {
+        try {
+            return jwt.verify(token, secret);
+        } catch (error) {
+            return null;
+        }
+    }
 }
 
-async function buscarLogin(pool, login) {
-    const sql = `SELECT * FROM funcionario WHERE login = ? AND ativo = 1`;
-    const [resultado] = await pool.execute(sql, login);
-    return resultado[0];
-}
-
-async function statusFuncionario(pool, id, estado) {
-    const sql = `UPDATE funcionario SET ativo = ? WHERE id - ?`;
-    const valores = [estado, id];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-async function atualizarFuncionario(pool, id, funcionario) {
-    const sql = `UPDATE funcionario SET nome = ?, login = ?, senha = ? WHERE id = ?`;
-    const valores = [funcionario.nome, funcionario.login, funcionario.senha, id];
-    const [resultado] = await pool.execute(sql, valores);
-    return resultado;
-}
-
-module.exports = {
-    cadastrarFuncionario,
-    buscarFuncionarios,
-    buscarLogin,
-    statusFuncionario,
-    atualizarFuncionario
-}
+module.exports = Funcionario;
