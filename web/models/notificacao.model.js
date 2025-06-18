@@ -2,7 +2,7 @@ const {query} = require('../db/db_config')
 
 class Notificacao {
     static async buscarIdFuncionario(funcionarioId) {
-      const [rows] = await query('SELECT * FROM NOTIFICACAO WHERE FK_FUNCIONARIO_id = ?', [funcionarioId]);
+      const rows = await query('SELECT * FROM NOTIFICACAO WHERE FK_FUNCIONARIO_id = ?', [funcionarioId]);
       return rows;
     }
   

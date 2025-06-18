@@ -3,7 +3,7 @@ const {query} = require('../db/db_config')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const saltRounds = 10;
-const secret = process.env.JWT_SECRET || 'seuSegredoMuitoSecreto';
+const secret = process.env.JWT_SECRET;
 
 class Funcionario {
     static async buscarTodos() {
@@ -13,7 +13,8 @@ class Funcionario {
 
     static async buscarPorId(id) {
         const [rows] = await query('SELECT * FROM FUNCIONARIO WHERE id = ?', [id]);
-        return rows[0];
+        
+        return rows;
     }
 
     static async buscarPorLogin(login) {

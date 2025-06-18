@@ -10,6 +10,45 @@ const ocorrenciaController = {
     }
   },
 
+  buscarComFiltros: async (req, res) => {
+    try {
+      const { status, prioridade, dataInicio, dataFim, page = 1, limit = 10 } = req.query;
+
+      // Construir objeto de filtro
+      const filtro = {};
+      if (status) filtro.status = status;
+      if (prioridade) filtro.prioridade = prioridade;
+      if (dataInicio) filtro.data_ocorrencia = { [Op.gte]: new Date(dataInicio) };
+      if (dataFim) {
+        filtro.data_ocorrencia = filtro.data_ocorrencia || {};
+        filtro.data_ocorrencia[Op.lte] = new Date(dataFim);
+      }
+
+      // Configurar paginação
+      const offset = (page - 1) * limit;
+
+      const { count, rows } = await Ocorrencia.findAndCountAll({
+        where: filtro,
+        include: [{
+          model: Equipamento,
+          attributes: ['id', 'tag', 'nome']
+        }],
+        order: [['data_ocorrencia', 'DESC']],
+        limit: parseInt(limit),
+        offset: offset
+      });
+
+      res.json({
+        itens: rows,
+        total: count,
+        totalPages: Math.ceil(count / limit),
+        currentPage: parseInt(page)
+      });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  },
+
   buscarPorId: async (req, res) => {
     try {
       const ocorrencia = await Ocorrencia.buscarPorId(req.params.id);

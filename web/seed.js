@@ -5,19 +5,16 @@ const bcrypt = require('bcrypt');
 async function createInitialUser() {
   try {
     // Verificar se o usuário admin já existe
-    const [existingAdmin] = await query('SELECT * FROM FUNCIONARIO WHERE login = ?', ['admin']);
     
-    if (existingAdmin) {
-      console.log('✅ Usuário admin já existe');
-      return;
-    }
+    
+
 
     // Dados do usuário admin
-    const nome = 'Administrador';
-    const login = 'admin';
-    const senha = 'admin123'; // Senha inicial
+    const nome = 'Operador';
+    const login = 'operador';
+    const senha = 'operador'; // Senha inicial
     const ativo = true;
-    const nivel_acesso = 4; // Administrador
+    const nivel_acesso = 3; // Administrador
 
     // Hash da senha
     const saltRounds = 10;

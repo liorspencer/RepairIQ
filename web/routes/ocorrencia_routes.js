@@ -22,6 +22,11 @@ router.get('/equipamento/:equipamentoId',
     ocorrenciaController.buscarPorEquipamento
 );
 
+router.get('/filtradas', 
+    funcionarioController.authorizeTecnico,
+    ocorrenciaController.buscarComFiltros
+);
+
 router.post('/', ocorrenciaController.cadastrar);
 
 router.put('/:id',

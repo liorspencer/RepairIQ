@@ -13,6 +13,7 @@ function definirConfiguracoes(app, pkg) {
     });
     app.set('views','./views/');
     app.use(pkg.express.static('public'));
+    app.use(pkg.favicon(pkg.path.join(__dirname, '../public', 'favicon.ico')));
     app.set('view engine', 'ejs');
 }
 module.exports = { definirConfiguracoes };

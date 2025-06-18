@@ -66,7 +66,7 @@ const funcionarioController = {
 
             // Gerar token JWT
             const token = Funcionario.gerarToken(funcionario);
-
+            console.log('check 3');
             // Retornar informações do funcionário (sem senha) e token
             const { senha: _, ...funcionarioSemSenha } = funcionario;
             res.json({
@@ -112,7 +112,8 @@ const funcionarioController = {
         }
 
         // Verificar se o funcionário ainda existe
-        const funcionario = await Funcionario.buscarPorId(decoded.id, query);
+        const funcionario = await Funcionario.buscarPorId(decoded.id);
+        console.log(decoded.id)
         if (!funcionario) {
             return res.status(401).json({ message: 'Funcionário não encontrado' });
         }

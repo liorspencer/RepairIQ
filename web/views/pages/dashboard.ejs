@@ -1,38 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <%- include('../partials/head') %>
-<body class="bg-gradient-to-br from-[#1e1e2f] to-[#2c2c3e] min-h-screen flex items-start justify-center py-10">
-
-  <div class="w-full max-w-[1200px] px-4 flex flex-col min-h-screen justify-between">
-
-    <!-- Logo -->
-    <div class="w-36 h-36 mx-auto mb-6">
-      <img src="/images/logo.png" alt="Logo" class="w-full h-full object-contain" />
-    </div>
-
-    <!-- Grid de botões -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 py-10 text-center">
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Abrir Ocorrência</button>
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Abrir Pedido Almozarifado</button>
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Notificações Enviadas</button>
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Lista Ocorrência</button>
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Lista OS</button>
-      <button class="bg-vermelho hover:bg-vermelhoHover text-white font-semibold text-[1.1rem] py-5 px-8 rounded-[20px] transition-transform transform hover:scale-105">Cadastro Funcionários</button>
-    </div>
-
-    <!-- Input e ações -->
-    <div class="text-center text-white mt-10">
-      <label for="osInput" class="block mb-3 text-base">Entre com o número OS</label>
-      <input id="osInput" type="text" placeholder="Digite o número da OS"
-      class="w-[300px] max-w-full px-4 py-3 bg-white text-black rounded-xl outline-none mb-6" />
-    
-
-      <div class="flex flex-wrap justify-center gap-6">
-        <button class="bg-black hover:bg-[#555] text-white px-8 py-4 text-base font-semibold rounded-[20px] transition-transform transform hover:scale-105">Consultar OS</button>
-        <button class="bg-black hover:bg-[#555] text-white px-8 py-4 text-base font-semibold rounded-[20px] transition-transform transform hover:scale-105">SAIR</button>
-      </div>
-    </div>
-
-  </div>
+<html lang="pt-BR">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
 </body>
+<div class="flex place-self-center justify-center p-5">
+    <button id="btn_equipamentos" class="btn btn-xl btn-primary ml-2 mr-2">
+        Equipamentos
+    </button>
+    <button id="btn_ocorrencias" class="btn btn-xl btn-primary ml-2 mr-2">
+        Ocorrências
+    </button>
+    <button id="btn_os" class="btn btn-xl btn-primary ml-2 mr-2">
+        Ordens de Serviços
+    </button>
+    <button id="btn_modelo_os" class="btn btn-xl btn-primary ml-2 mr-2">
+        Modelos de Ordens de Serviço
+    </button>
+    <button id="btn_funcionario" class="btn btn-xl btn-primary ml-2 mr-2">
+        Funcionários
+    </button>
+    <button id="btn_equipe" class="btn btn-xl btn-primary ml-2 mr-2">
+        Equipes
+    </button>
+    <button id="btn_registro_auditoria" class="btn btn-xl btn-primary ml-2 mr-2">
+        Registro de Auditoria
+    </button>
+</div>
+<script>
+
+    
+    const btn_eqp = document.getElementById("btn_equipamentos");
+    const btn_os = document.getElementById("btn_os");
+    const btn_modelo_os = document.getElementById("btn_modelo_os");
+    const btn_func = document.getElementById("btn_funcionario");
+    const btn_equip = document.getElementById("btn_equipe");
+    const btn_registro_auditoria = document.getElementById("btn_registro_auditoria");
+    const btn_notificacao = document.getElementById("btn_notificacao");
+
+    function esconder() {
+        if(dadosRecuperados.nivel_acesso==3){
+        console.log(3);
+        btn_equip.style.visibility = "collapse";
+        btn_func.style.visibility = "collapse";
+    }else if(dadosRecuperados.nivel_acesso==2){
+        console.log(2);
+
+        btn_equip.style.visibility = "collapse";
+        btn_func.style.visibility = "collapse";
+        btn_registro_auditoria.style.visibility = "collapse";
+        btn_modelo_os.style.visibility = "collapse";
+    }else if(dadosRecuperados.nivel_acesso==1){
+        console.log(1);
+        
+        btn_equip.style.visibility = "collapse";
+        btn_func.style.visibility = "collapse";
+        btn_registro_auditoria.style.visibility = "collapse";
+        btn_eqp.style.visibility = "collapse";
+        btn_modelo_os.style.visibility = "collapse";
+        btn_os.style.visibility = "collapse";
+        btn_notificacao.style.visibility = "collapse";
+    }
+    }
+    esconder();
+</script>
 </html>

@@ -2,9 +2,12 @@ const express = require('express');
 const path = require('path');
 const authRoutes = require('./auth.routes');
 const funcionarioRoutes = require('./funcionario.routes');
+//const funcionarioGrupoFuncionarioRoutes = require('./funcionario_grupo_funcionario.routes');
 const equipamentoRoutes = require('./equipamento.routes');
 const ocorrenciaRoutes = require('./ocorrencia_routes');
 const ordemServicoRoutes = require('./ordem_servico.routes');
+//const ordemServicoFuncionarioRoutes = require('./ordem_servico_funcionario.routes');
+//const modeloOrdemServicoRoutes = require('./modelo_ordem_servico.routes');
 const notificacaoRoutes = require('./notificacao.routes');
 const grupoFuncionarioRoutes = require('./grupo_funcionario.routes');
 const registroAuditoriaRoutes = require('./registro_auditoria.routes');
@@ -39,9 +42,9 @@ exports.definirRotas = (app) => {
     });
   });
   
-  app.get('/abrir-ocorrencia', (req, res) => {
-    res.render('pages/abrirOcorrencia',{
-      titulo: "Abrir Ocorrência"
+  app.get('/ocorrencias', (req, res) => {
+    res.render('partials/ocorrencias',{
+      titulo: "Ocorrências"
     });
   });
   
@@ -78,10 +81,13 @@ exports.definirRotas = (app) => {
   // API Routes
   app.use('/api/auth', authRoutes);
   app.use('/api/funcionarios', funcionarioRoutes);
+  //app.use('/api/fgf', funcionarioGrupoFuncionarioRoutes);
   app.use('/api/equipamentos', equipamentoRoutes);
   app.use('/api/ocorrencias', ocorrenciaRoutes);
   app.use('/api/ordens-servico', ordemServicoRoutes);
+  //app.use('/api/osf', ordemServicoFuncionarioRoutes)
   app.use('/api/notificacoes', notificacaoRoutes);
+  //app.use('/api/mos', modeloOrdemServicoRoutes);
   app.use('/api/grupos-funcionarios', grupoFuncionarioRoutes);
   app.use('/api/registro-auditoria', registroAuditoriaRoutes);
 };

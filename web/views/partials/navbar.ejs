@@ -1,0 +1,100 @@
+<div class="navbar bg-base-300 shadow-sm">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">RepairIQ</a>
+    </div>
+    <div id="btn_notificacao" class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" onclick="notificacaoChecar()">
+            <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+            </div>
+        </button>
+        <ul id="notificacao_content" tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+        </ul>
+    </div>
+    <div class="dropdown dropdown-end">
+        <div class="flex-none">
+            <button class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block h-5 w-5 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <span id="funcionario-nome" class="text-lg"></span>
+            <li><a onclick="logout()">Logout</a></li>
+        </ul>
+    </div>
+    <script>
+        if (localStorage.getItem("userData") === null || localStorage.getItem("authToken") === null) {
+            window.location.href = "/login?erro=Você precisa estar logado para visualizar a página.";
+        }
+        const dados = localStorage.getItem("userData");
+        const token = localStorage.getItem("authToken");
+        const dadosRecuperados = JSON.parse(dados);
+        document.getElementById("funcionario-nome").innerText = dadosRecuperados.nome;
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "/login";
+        }
+
+        async function checkAcesso() {
+            try {
+                const resposta = await fetch("/api/auth/profile", {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+                    }
+                });
+                if (!resposta.ok) {
+                    window.location.href = "/login?erro=Você precisa estar logado para visualizar a página.";
+                }
+            } catch (erro) {
+                console.error("Erro ao enviar:", erro);
+            }
+        }
+
+        async function notificacaoChecar() {
+            try {
+                const resposta = await fetch(`/api/notificacoes/funcionario/${dadosRecuperados.id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+                    }
+                });
+                dadosRecebidos = await resposta.json();
+                let notificacoes = "";
+                let datasNotif;
+
+                dadosRecebidos.forEach(notificacao => {
+                    datasNotif = new Date(notificacao.data_envio);
+                    const dataFormatada = datasNotif.toLocaleDateString('pt-BR', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                    })
+                    const horaFormatada = datasNotif.toLocaleTimeString('pt-BR', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                    });
+                    const dataHoraFormatada = `${dataFormatada} ${horaFormatada}`;
+                    notificacoes += `<li>${notificacao.mensagem}</li><span class="text-xs text-right">${dataHoraFormatada}</span>`;
+                });
+                document.getElementById("notificacao_content").innerHTML = notificacoes;
+
+            } catch (erro) {
+                console.error("Erro ao enviar:", erro);
+            }
+        }
+
+        checkAcesso();
+    </script>
+</div>
